@@ -37,13 +37,12 @@ function updateDisplay() {
     document.getElementById('total-display').innerText = total.toFixed(2);
 }
 
-// यह फंक्शन पॉपअप दिखाएगा
 function showPopup(name, totalAmount) {
     document.getElementById('popup-message').innerText = `Thank you, ${name}! Your order worth ₹${totalAmount.toFixed(2)} has been placed successfully.`;
     document.getElementById('success-popup').style.display = 'block';
 }
 
-// यह फंक्शन पॉपअप बंद करेगा और स्क्रीन रिसेट करेगा
+
 function closePopup() {
     document.getElementById('success-popup').style.display = 'none';
     cart = [];
@@ -69,7 +68,7 @@ async function confirmOrder() {
         });
 
         if (response.ok) {
-            showPopup(name, total); // यहाँ से नया पॉपअप कॉल होगा
+            showPopup(name, total); 
         } else {
             alert("Error: Server responded with an issue.");
         }
