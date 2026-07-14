@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CafeBean</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="navbar">
+    <div class="logo">
+        <span>☕ CafeBean</span>
+    </div>
+    <ul class="nav-links">
+        <li><a href="#menu-grid">Menu</a></li>
+        <li><a href="#about">AboutUs</a></li>
+        <li><a href="#contact">ContactUs</a></li>
+    </ul>
+</nav>
+    <header>
+        <h1>CafeBean</h1>
+    </header>
+
+<section id="about">
+    <h2>About CafeBean</h2>
+    <p>Experience the 90s retro aesthetic with our handcrafted coffee.</p>
+</section>
+
+<section id="cafebeanspecial">
+    <h2>Our Specials</h2>
+    <p>Don't miss our signature latte and matcha!</p>
+</section>
+
+    <div id="menu-grid">
+        <!-- Latte -->
+        <div class="card">
+            <img src="images/latte.jpg" alt="Latte">
+            <h3 class="name">Latte</h3>
+            <p>Price: ₹<span class="price">1000</span></p>
+            <button onclick="decrement('Latte', 1000)">-</button>
+            <span id="qty-Latte" class="qty">0</span>
+            <button onclick="increment('Latte', 1000)">+</button>
+        </div>
+
+        <!-- Matcha -->
+        <div class="card">
+            <img src="images/matcha.jpg" alt="Matcha">
+            <h3 class="name">Matcha</h3>
+            <p>Price: ₹<span class="price">1100</span></p>
+            <button onclick="decrement('Matcha', 1100)">-</button>
+            <span id="qty-Matcha" class="qty">0</span>
+            <button onclick="increment('Matcha', 1100)">+</button>
+        </div>
+
+        <!-- Croissant -->
+        <div class="card">
+            <img src="images/croissant.jpg" alt="Croissant">
+            <h3 class="name">Croissant</h3>
+            <p>Price: ₹<span class="price">1500</span></p>
+            <button onclick="decrement('Croissant', 1500)">-</button>
+            <span id="qty-Croissant" class="qty">0</span>
+            <button onclick="increment('Croissant', 1500)">+</button>
+        </div>
+
+        <!-- Cupcake -->
+        <div class="card">
+            <img src="images/cupcake.jpg" alt="Cupcake">
+            <h3 class="name">Cupcake</h3>
+            <p>Price: ₹<span class="price">400</span></p>
+            <button onclick="decrement('Cupcake', 400)">-</button>
+            <span id="qty-Cupcake" class="qty">0</span>
+            <button onclick="increment('Cupcake', 400)">+</button>
+        </div>
+
+        <!-- Brownie -->
+        <div class="card">
+            <img src="images/brownie.jpg" alt="Brownie">
+            <h3 class="name">Brownie</h3>
+            <p>Price: ₹<span class="price">700</span></p>
+            <button onclick="decrement('Brownie', 700)">-</button>
+            <span id="qty-Brownie" class="qty">0</span>
+            <button onclick="increment('Brownie', 700)">+</button>
+        </div>
+
+        <!-- Avocado Toast -->
+        <div class="card">
+            <img src="images/avocado_toast.jpg" alt="Avocado Toast">
+            <h3 class="name">Avocado Toast</h3>
+            <p>Price: ₹<span class="price">650</span></p>
+            <button onclick="decrement('AvocadoToast', 650)">-</button>
+            <span id="qty-AvocadoToast" class="qty">0</span>
+            <button onclick="increment('AvocadoToast', 650)">+</button>
+        </div>
+
+        <!-- Iced Coffee -->
+        <div class="card">
+            <img src="images/iced_coffee.jpg" alt="Iced Coffee">
+            <h3 class="name">Iced Coffee With Ice-Cream</h3>
+            <p>Price: ₹<span class="price">700</span></p>
+            <button onclick="decrement('IcedCoffeeWithIceCream', 700)">-</button>
+            <span id="qty-IcedCoffeeWithIceCream" class="qty">0</span>
+            <button onclick="increment('IcedCoffeeWithIceCream', 700)">+</button>
+        </div>
+
+        <!-- Americano -->
+        <div class="card">
+            <img src="images/americano.jpg" alt="Americano">
+            <h3 class="name">Americano</h3>
+            <p>Price: ₹<span class="price">800</span></p>
+            <button onclick="decrement('Americano', 800)">-</button>
+            <span id="qty-Americano" class="qty">0</span>
+            <button onclick="increment('Americano', 800)">+</button>
+        </div>
+
+        <!-- Espresso -->
+        <div class="card">
+            <img src="images/espresso.jpg" alt="Espresso">
+            <h3 class="name">Espresso</h3>
+            <p>Price: ₹<span class="price">1200</span></p>
+            <button onclick="decrement('Espresso', 1200)">-</button>
+            <span id="qty-Espresso" class="qty">0</span>
+            <button onclick="increment('Espresso', 1200)">+</button>
+        </div>
+    </div>
+
+
+<div id="order-container">
+<div id="cart-summary">
+        <!-- <h3>Order Summary</h3> -->
+        <div id="cart-items">
+            <p><strong></strong>Total Amount: &#8377;<span id="total-display">0</span></strong></p>
+        </div>
+</div>
+
+<div id="checkout-section">
+        <h3>Place Your Order</h3>
+        <input type="text" id="customerName" placeholder="Enter Your Name">
+        <button onclick="confirmOrder()">Confirm Order</button>
+</div>
+</div>
+
+<div id="success-popup" style="display: none; position: fixed; top: 30%; left: 30%; background: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 0 20px rgba(0,0,0,0.3);z-index: 1000;text-align: center;">
+    <h2 style="color:green;">Order Confirmed!☑️</h2>
+    <p id="popup-message">
+        <button onclick="closePopup()"  style="padding:10px 20px; background:#333; color:#fff; border:none; cursor:pointer; ">OK</button>
+    </p>
+</div>
+
+<footer id="contact">
+        <h3>Contact Us</h3>
+        <p>Instagram: @CafeBean | Email: hello@cafebean.com</p>
+        <p>&copy; 2026 CafeBean. All rights reserved.</p>
+</footer>
+
+    <script src="script.js"></script>
+</body>
+</html
