@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order Confirmed | CafeBean</title>
+    <style>
+        body {
+            background-color: #fdfbf7; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #4a3728;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: #fff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            text-align: center;
+            border: 2px solid #e0d0c0;
+            width: 80%;
+            max-width: 400px;
+        }
+        h1 { color: #5d4037; margin-bottom: 10px; }
+        ul { padding: 0; margin: 20px 0; list-style: none; }
+        li { padding: 5px 0; font-weight: bold; }
+        .total { font-size: 1.5rem; color: #5d4037; margin: 20px 0; }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 25px;
+            background-color: #8d6e63;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+        a:hover { background-color: #5d4037; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Order Confirmed! ☑️</h1>
+    <h2 id="thank-message"></h2>
+    <h3>Your Bill Summary:</h3>
+    <ul id="final-bill"></ul>
+    <h2 class="total" id="final-total"></h2>
+    <a href="index.html">Order More</a>
+</div>
+
+<script>
+    const data = JSON.parse(localStorage.getItem('orderSummary'));
+    if (data) {
+        document.getElementById('thank-message').innerText = `Thank you, ${data.name}!`;
+        const bill = document.getElementById('final-bill');
+        data.cart.forEach(item => {
+            bill.innerHTML += `<li>${item.name} x ${item.quantity} = ₹${item.price * item.quantity}</li>`;
+        });
+        document.getElementById('final-total').innerText = `Total: ₹${data.total}`;
+    }
+</script>
+</body>
+</html>

@@ -32,91 +32,82 @@
 </section>
 
     <div id="menu-grid">
-        <!-- Latte -->
         <div class="card">
             <img src="images/latte.jpg" alt="Latte">
             <h3 class="name">Latte</h3>
-            <p>Price: ₹<span class="price">1000</span></p>
+            <p>Price:<span class="price">&#8377;1000</span></p>
             <button onclick="decrement('Latte', 1000)">-</button>
             <span id="qty-Latte" class="qty">0</span>
             <button onclick="increment('Latte', 1000)">+</button>
         </div>
 
-        <!-- Matcha -->
         <div class="card">
             <img src="images/matcha.jpg" alt="Matcha">
             <h3 class="name">Matcha</h3>
-            <p>Price: ₹<span class="price">1100</span></p>
+            <p>Price: <span class="price">&#8377;1100</span></p>
             <button onclick="decrement('Matcha', 1100)">-</button>
             <span id="qty-Matcha" class="qty">0</span>
             <button onclick="increment('Matcha', 1100)">+</button>
         </div>
 
-        <!-- Croissant -->
         <div class="card">
             <img src="images/croissant.jpg" alt="Croissant">
             <h3 class="name">Croissant</h3>
-            <p>Price: ₹<span class="price">1500</span></p>
+            <p>Price: <span class="price">&#8377;1500</span></p>
             <button onclick="decrement('Croissant', 1500)">-</button>
             <span id="qty-Croissant" class="qty">0</span>
             <button onclick="increment('Croissant', 1500)">+</button>
         </div>
 
-        <!-- Cupcake -->
         <div class="card">
             <img src="images/cupcake.jpg" alt="Cupcake">
             <h3 class="name">Cupcake</h3>
-            <p>Price: ₹<span class="price">400</span></p>
+            <p>Price: <span class="price">&#8377;400</span></p>
             <button onclick="decrement('Cupcake', 400)">-</button>
             <span id="qty-Cupcake" class="qty">0</span>
             <button onclick="increment('Cupcake', 400)">+</button>
         </div>
 
-        <!-- Brownie -->
         <div class="card">
             <img src="images/brownie.jpg" alt="Brownie">
             <h3 class="name">Brownie</h3>
-            <p>Price: ₹<span class="price">700</span></p>
+            <p>Price: <span class="price">&#8377;700</span></p>
             <button onclick="decrement('Brownie', 700)">-</button>
             <span id="qty-Brownie" class="qty">0</span>
             <button onclick="increment('Brownie', 700)">+</button>
         </div>
 
-        <!-- Avocado Toast -->
         <div class="card">
             <img src="images/avocado_toast.jpg" alt="Avocado Toast">
             <h3 class="name">Avocado Toast</h3>
-            <p>Price: ₹<span class="price">650</span></p>
+            <p>Price: <span class="price">&#8377;650</span></p>
             <button onclick="decrement('AvocadoToast', 650)">-</button>
             <span id="qty-AvocadoToast" class="qty">0</span>
             <button onclick="increment('AvocadoToast', 650)">+</button>
         </div>
 
-        <!-- Iced Coffee -->
         <div class="card">
             <img src="images/iced_coffee.jpg" alt="Iced Coffee">
             <h3 class="name">Iced Coffee With Ice-Cream</h3>
-            <p>Price: ₹<span class="price">700</span></p>
+            <p>Price: <span class="price">&#8377;700</span></p>
             <button onclick="decrement('IcedCoffeeWithIceCream', 700)">-</button>
             <span id="qty-IcedCoffeeWithIceCream" class="qty">0</span>
             <button onclick="increment('IcedCoffeeWithIceCream', 700)">+</button>
         </div>
 
-        <!-- Americano -->
         <div class="card">
             <img src="images/americano.jpg" alt="Americano">
             <h3 class="name">Americano</h3>
-            <p>Price: ₹<span class="price">800</span></p>
+            <p>Price: <span class="price">&#8377;800</span></p>
             <button onclick="decrement('Americano', 800)">-</button>
             <span id="qty-Americano" class="qty">0</span>
             <button onclick="increment('Americano', 800)">+</button>
         </div>
 
-        <!-- Espresso -->
         <div class="card">
             <img src="images/espresso.jpg" alt="Espresso">
             <h3 class="name">Espresso</h3>
-            <p>Price: ₹<span class="price">1200</span></p>
+            <p>Price: <span class="price">&#8377;1200</span></p>
             <button onclick="decrement('Espresso', 1200)">-</button>
             <span id="qty-Espresso" class="qty">0</span>
             <button onclick="increment('Espresso', 1200)">+</button>
@@ -126,8 +117,8 @@
 
 <div id="order-container">
 <div id="cart-summary">
-        <!-- <h3>Order Summary</h3> -->
-        <div id="cart-items">
+        <h3>Order Summary</h3>
+            <ul id="bill-details" style="list-style:none";margin:10px 0;S></ul>
             <p><strong></strong>Total Amount: &#8377;<span id="total-display">0</span></strong></p>
         </div>
 </div>

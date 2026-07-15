@@ -34,21 +34,18 @@ function updateDisplay() {
         const qtySpan = document.getElementById('qty-' + item.name.replace(/\s+/g, ''));
         if (qtySpan) qtySpan.innerText = item.quantity;
     });
+
+    const billDetails = document.getElementById('bill-details');
+    if (billDetails) {
+        billDetails.innerHTML = '';
+        cart.forEach(item => {
+            const li = document.createElement('li');
+            li.innerText = `${item.name} x ${item.quantity} = ₹${item.price * item.quantity}`;
+            billDetails.appendChild(li);
+        });
+    }
+
     document.getElementById('total-display').innerText = total.toFixed(2);
-}
-
-function showPopup(name, totalAmount) {
-    document.getElementById('popup-message').innerText = `Thank you, ${name}! Your order worth ₹${totalAmount.toFixed(2)} has been placed successfully.`;
-    document.getElementById('success-popup').style.display = 'block';
-}
-
-
-function closePopup() {
-    document.getElementById('success-popup').style.display = 'none';
-    cart = [];
-    total = 0;
-    document.getElementById('customerName').value = "";
-    updateDisplay();
 }
 
 async function confirmOrder() {
@@ -68,7 +65,9 @@ async function confirmOrder() {
         });
 
         if (response.ok) {
-            showPopup(name, total); 
+            localStorage.setItem('orderSummary', JSON.stringify({ name, cart, total }));
+            
+            window.location.href = 'success.html'; 
         } else {
             alert("Error: Server responded with an issue.");
         }
